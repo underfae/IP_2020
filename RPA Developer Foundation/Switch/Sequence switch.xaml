@@ -1,0 +1,142 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Sequence_switch" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1324,1173" sap2010:WorkflowViewState.IdRef="Sequence_switch_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.microsoft.com/workflow/2012/07/xaml/activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Sequence_switch" sap:VirtualizedContainerService.HintSize="617,1108" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="s:String[]" Name="array">
+        <Variable.Default>
+          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;Ax001&quot;,&quot;Ax002&quot;,&quot;Ax003&quot;,&quot;Ax004&quot;,&quot;Ax005&quot;,&quot;Bx001&quot;,&quot;Bx002&quot;,&quot;Bx003&quot;,&quot;Cx001&quot;,&quot;Cx002&quot;,&quot;Cx003&quot;,&quot;Cx004&quot;}" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="s:String[]" Name="arrayA">
+        <Variable.Default>
+          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="new String(){}" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="s:String[]" Name="arrayD">
+        <Variable.Default>
+          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="new String(){}" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="s:String[]" Name="arrayC">
+        <Variable.Default>
+          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="new String(){}" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="s:String[]" Name="arrayB">
+        <Variable.Default>
+          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="new String(){}" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="s:String[]" Name="letter" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="575,492" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[array]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:String">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="539,358" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <p:SplitString DisplayName="Split string" sap:VirtualizedContainerService.HintSize="497,22" sap2010:WorkflowViewState.IdRef="SplitString_1" Input="[item]" Result="[letter]" Separator="x" StringSplitOptions="None" />
+            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[letter(0)]" sap:VirtualizedContainerService.HintSize="497,204" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+              <Switch.Default>
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;Error cannot be matched to any array&quot;]" />
+              </Switch.Default>
+              <Assign x:Key="A" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="s:String[]">[arrayA]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="s:String[]">[arrayA.Concat({item}).ToArray]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign x:Key="B" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="s:String[]">[arrayB]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="s:String[]">[arrayB.Concat({item}).ToArray]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign x:Key="C" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="s:String[]">[arrayC]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="s:String[]">[arrayC.Concat({item}).ToArray]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign x:Key="D" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="s:String[]">[arrayD]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="s:String[]">[arrayD.Concat({item}).ToArray]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Switch>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="575,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Join(&quot;, &quot;,arrayA)]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="575,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[String.Join(&quot;, &quot;,arrayB)]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="575,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[String.Join(&quot;, &quot;,arrayC)]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="575,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[String.Join(&quot;, &quot;,arrayD)]" />
+  </Sequence>
+</Activity>
