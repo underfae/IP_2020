@@ -1,0 +1,116 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="AttachBrowser" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_PhoneNumber" Type="OutArgument(ui:GenericValue)" />
+    <x:Property Name="out_Email" Type="OutArgument(ui:GenericValue)" />
+    <x:Property Name="out_Name" Type="OutArgument(ui:GenericValue)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>512,947</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="32">
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="16">
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'Generatea Page'" sap:VirtualizedContainerService.HintSize="434,782" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="0aba2aaab641a927621e0eaffa25cc59" Selector="&lt;html title='Generate a Random Name - Fake Name Generator' /&gt;">
+    <ui:BrowserScope.Body>
+      <ActivityAction x:TypeArguments="x:Object">
+        <ActivityAction.Argument>
+          <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+        </ActivityAction.Argument>
+        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,636" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:Click DelayBefore="{x:Null}" AlterIfDisabled="True" ClickType="CLICK_SINGLE" DelayMS="500" DisplayName="Click 'INPUT  genbtn'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+            <ui:Click.CursorPosition>
+              <ui:CursorPosition OffsetX="42" OffsetY="14" Position="TopLeft" />
+            </ui:Click.CursorPosition>
+            <ui:Click.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="aae79232-7799-4159-bbc5-631c5280936b" InformativeScreenshot="341f7bb5f65a88e0e3a8221f23594d14" Selector="&lt;webctrl id='genbtn' tag='INPUT' /&gt;" WaitForReady="NONE">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+              </ui:Target>
+            </ui:Click.Target>
+          </ui:Click>
+          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Name" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+            <ui:GetValue.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f5279171-0387-4e84-bc56-3ed366da6544" InformativeScreenshot="5aa2e2afb73f0b8bdf8d82ed17558c8a" Selector="&lt;webctrl idx='1' tag='H3' /&gt;" WaitForReady="INTERACTIVE">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+              </ui:Target>
+            </ui:GetValue.Target>
+            <ui:GetValue.Value>
+              <OutArgument x:TypeArguments="ui:GenericValue">[out_Name]</OutArgument>
+            </ui:GetValue.Value>
+          </ui:GetValue>
+          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Phone Number" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_2">
+            <ui:GetValue.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="eeffe378-bca1-455f-aa1b-89720eabf009" InformativeScreenshot="38c89e0c5b09c5484cbd020661d1d9d5" Selector="&lt;webctrl idx='2' isleaf='1' tag='DD' /&gt;" WaitForReady="NONE">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+              </ui:Target>
+            </ui:GetValue.Target>
+            <ui:GetValue.Value>
+              <OutArgument x:TypeArguments="ui:GenericValue">[out_PhoneNumber]</OutArgument>
+            </ui:GetValue.Value>
+          </ui:GetValue>
+          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Email" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_3">
+            <ui:GetValue.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7206f67d-5aa4-44f7-a7b9-02db087952c6" InformativeScreenshot="b56472f97255bf860af8c840cc586c76" Selector="&lt;webctrl idx='9' tag='DD' /&gt;" WaitForReady="NONE">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+              </ui:Target>
+            </ui:GetValue.Target>
+            <ui:GetValue.Value>
+              <OutArgument x:TypeArguments="ui:GenericValue">[out_Email]</OutArgument>
+            </ui:GetValue.Value>
+          </ui:GetValue>
+        </Sequence>
+      </ActivityAction>
+    </ui:BrowserScope.Body>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+  </ui:BrowserScope>
+</Activity>
